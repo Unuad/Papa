@@ -3,21 +3,21 @@ $(document).ready(function(){
 	const ti = 5000
 	const ts = 1000
 	var isSlide = true
-	if (isSlide) slide(i)
 
 
-	$(".img").click(function() {
+
+	$(".next").click(function() {
 		isSlide = false
 		if( i == 5 ) i = 0
-		$('.next').eq(i++).fadeIn(ts).delay(ti - ts).fadeOut(ts)
+		$('.img').eq(i++).fadeIn(ts).delay(ti - ts).fadeOut(ts)
 	})
 
-	function slide(i) {
+	if (isSlide){
 		setTimeout(function run() {
 		  $('.img').eq(i).fadeIn(ts).delay(ti - ts).fadeOut(ts)
 		  i++
 		  if( i == 5 ) i = 0
 		  setTimeout(run, ti);
 		}, 1);
-	}
+	 }
 })
