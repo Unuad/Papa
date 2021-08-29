@@ -5,6 +5,7 @@ $(document).ready(function(){
 	var timeInt  = 0
 	var b = 0
 	var c = 0
+	var d = $('.img').length - 1
 	run(i)
 
 		$('#next').click(function() {
@@ -13,26 +14,26 @@ $(document).ready(function(){
 		})
 		$('#prev').click(function() {
 			clearAll()
-	  		c == 0 ? c = 4 : c--
+	  		c == 0 ? c = d : c--
 			run(c)
 		})
 
-		function run(i) {
-		  $('.img')
-		  .eq(i)
-		  .fadeIn(ts)
-		  .delay(ti - ts)
-		  .fadeOut(ts)
-		  $('#test').html(i)
-  		  c = i
-		  i == 4 ? i = 0 : i++
-		  b = i
-		  timeInt = setTimeout(run, ti, i);
-		}
+	function run(i) {
+	  $('.img')
+	  .eq(i)
+	  .fadeIn(ts)
+	  .delay(ti - ts)
+	  .fadeOut(ts)
+	  $('#test').html(d)
+		  c = i
+	  i == d ? i = 0 : i++
+	  b = i
+	  timeInt = setTimeout(run, ti, i);
+	}
 
-		function clearAll(){
-			$('.img')
-	  			.dequeue()
-	  			clearTimeout(timeInt)
-		}
+	function clearAll(){
+		$('.img')
+  			.dequeue()
+  			clearTimeout(timeInt)
+	}
 })
