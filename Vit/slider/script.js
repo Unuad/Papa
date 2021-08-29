@@ -8,17 +8,12 @@ $(document).ready(function(){
 	run(i)
 
 		$('#next').click(function() {
-			$('.img')
-	  			.dequeue()
-	  			clearTimeout(timeInt)
-
+			clearAll()
 			run(b)
 		})
 		$('#prev').click(function() {
-			$('.img')
-	  			.dequeue()
-	  			clearTimeout(timeInt)
-	  			c == 0 ? c = 4 : c--
+			clearAll()
+	  		c == 0 ? c = 4 : c--
 			run(c)
 		})
 
@@ -33,5 +28,11 @@ $(document).ready(function(){
 		  i == 4 ? i = 0 : i++
 		  b = i
 		  timeInt = setTimeout(run, ti, i);
+		}
+
+		function clearAll(){
+			$('.img')
+	  			.dequeue()
+	  			clearTimeout(timeInt)
 		}
 })
