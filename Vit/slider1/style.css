@@ -15,13 +15,13 @@
   z-index: 0;
 }
 
-.next {
+#next {
   position: absolute;
   top: 130px;
   left: 470px;
 }
 
-.prev {
+#prev {
   position: absolute;
   top: 130px;
   left: 3px;
