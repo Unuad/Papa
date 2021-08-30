@@ -19,10 +19,34 @@
   position: absolute;
   top: 130px;
   left: 470px;
+  cursor: pointer;
+  color: #3AE2CE;
+  font-size: 2em;
 }
 
 #prev {
   position: absolute;
   top: 130px;
   left: 3px;
+  cursor: pointer;
+  color: #3AE2CE;
+  font-size: 2em;
+}
+.knopki {
+  position: relative;
+  color: #3AE2CE;
+  top: 280px;
+  width: 100%;
+  text-align: center;
+}
+.kropka {
+  padding: 5px ;
+  margin-right: 2px;
+  margin-left: 2px;
+  cursor: pointer;
+  color: #3AE2CE;
+}
+
+.kropka:hover {
+  color: #286BCE;
 }

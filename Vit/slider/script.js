@@ -17,23 +17,20 @@ $(document).ready(function(){
 	  		c == 0 ? c = d : c--
 			run(c)
 		})
+		$('.')
 
 	function run(i) {
-	  $('.img')
-	  .eq(i)
-	  .fadeIn(ts)
-	  .delay(ti - ts)
-	  .fadeOut(ts)
+	  $('.img').eq(i).fadeIn(ts).delay(ti - ts).fadeOut(ts)
 	  $('#test').html(d)
-		  c = i
+	  c = i
 	  i == d ? i = 0 : i++
 	  b = i
 	  timeInt = setTimeout(run, ti, i);
 	}
 
 	function clearAll(){
-		$('.img')
-  			.dequeue()
-  			clearTimeout(timeInt)
+		$('.img').dequeue()
+  		clearTimeout(timeInt)
 	}
+	//◎◉❂
 })
