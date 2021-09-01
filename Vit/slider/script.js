@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	let i = 0
 	const ti = 5000
-	const ts = 1000
+	const ts = 500
 	var timeInt  = 0
 	var b = 0
 	var c = 0
@@ -17,15 +17,25 @@ $(document).ready(function(){
 	  		c == 0 ? c = d : c--
 			run(c)
 		})
-		$('.')
+		$('.kropka').click(function() {
+			clearAll()
+			let wq = $(this).index()
+			run(wq)
+		})
 
 	function run(i) {
-	  $('.img').eq(i).fadeIn(ts).delay(ti - ts).fadeOut(ts)
-	  $('#test').html(d)
-	  c = i
+			  c = i
+	  $('.img').eq(i)
+	  .fadeIn(ts, function() {
+	  	$('.kropka').eq(c).html('◉')
+	  })
+	  .delay(ti - ts)
+	  .fadeOut(ts)
+	 
 	  i == d ? i = 0 : i++
 	  b = i
 	  timeInt = setTimeout(run, ti, i);
+	  $('.kropka').html('◎')
 	}
 
 	function clearAll(){
@@ -33,4 +43,5 @@ $(document).ready(function(){
   		clearTimeout(timeInt)
 	}
 	//◎◉❂
+	//$('#test').html(wq)
 })
